@@ -32,9 +32,12 @@ def main():
         cursor = db.cursor()
         print("-- DISPLAYING FILMS --")
         PrintFilms(cursor)
-
+        """ I didn't see the instruction not to use Star Wars until I was about to submit it....
         cursor.execute("INSERT INTO film (film_id,film_name,film_releaseDate,film_runtime,film_director,studio_id,genre_id)"\
                        "VALUES (4,'Star Wars',1977,121,'George Lucus',1,2);")
+        """
+        cursor.execute("INSERT INTO film (film_id,film_name,film_releaseDate,film_runtime,film_director,studio_id,genre_id)"\
+                       "VALUES (4,'Cocaine Bear',2023,95,'Elizabeth Banks',3,1);")
         print("-- DISPLAYING FILMS AFTER INSERT --")
         PrintFilms(cursor)
 
@@ -75,8 +78,8 @@ def PrintFilms(cursor):
     for Line in Lines:
         print(f"Film Name: {Line[0]}\n"\
             f"Director: {Line[1]}\n"\
-            f"Genre Name: {Line[2]}\n"\
-            f"Studio Name: {Line[3]}\n")
+            f"Genre Name: {Line[3]}\n"\
+            f"Studio Name: {Line[2]}\n")
         
 if __name__ == '__main__':
     main()
